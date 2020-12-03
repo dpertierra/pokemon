@@ -3,5 +3,5 @@ class Turn:
         self.command1 = None
         self.command2 = None
 
-    def can_start(self):
+    def canStart(self):
         return self.command1 and self.command2

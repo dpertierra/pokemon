@@ -42,34 +42,34 @@ NATURE_MATRIX = [
 ]
 
 NATURES = [
-"Hardy",
-"Lonely",
-"Brave",
-"Adamant",
-"Naughty",
-"Bold",
-"Docile",
-"Relaxed",
-"Impish",
-"Lax",
-"Timid",
-"Hasty",
-"Serious",
-"Jolly",
-"Naive",
-"Modest",
-"Mild",
-"Quiet",
-"Bashful",
-"Rash",
-"Calm",
-"Gentle",
-"Sassy",
-"Careful",
-"Quirky"
+    "Hardy",
+    "Lonely",
+    "Brave",
+    "Adamant",
+    "Naughty",
+    "Bold",
+    "Docile",
+    "Relaxed",
+    "Impish",
+    "Lax",
+    "Timid",
+    "Hasty",
+    "Serious",
+    "Jolly",
+    "Naive",
+    "Modest",
+    "Mild",
+    "Quiet",
+    "Bashful",
+    "Rash",
+    "Calm",
+    "Gentle",
+    "Sassy",
+    "Careful",
+    "Quirky"
 ]
 
-TYPES =[
+TYPES = [
     "Normal",
     "Fighting",
     "Flying",
@@ -84,31 +84,29 @@ TYPES =[
     "Grass",
     "Electric",
     "Psychic",
-    "Ice"
+    "Ice",
     "Dragon",
     "Dark",
     "Fairy"
 ]
 
 TYPE_CHART = [
-    [1,	1,	1,	1,	1,	0.5, 1,	0, 0.5,	1,	1,	1,	1,	1,	1,	1,	1,	1,], #Normal Attacking
-    [2,	1, 0.5, 0.5, 1,	2, 0.5, 0, 2, 1, 1, 1,	1,	0.5, 2,	1, 2, 0.5], #Fighting Attacking
-    [1,	2, 1, 1, 1, 0.5, 2,	1, 0.5, 1, 1, 2, 0.5, 1, 1,	1, 1, 1], #Flying Attacking
-    [1, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 0, 1, 1, 2, 1, 1, 1, 1, 1, 2], #Poison Attacking
-    [1, 1, 0, 2, 1, 2, 0.5, 1, 2, 2, 1, 0.5, 2, 1, 1, 1, 1, 1], #Ground Attacking
-    [1, 0.5, 2, 1, 0.5, 1, 2, 1, 0.5, 2, 1, 1, 1, 1, 2, 1, 1, 1], #Rock Attacking
-    [1, 0.5, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 0.5, 1, 2, 1, 2, 1, 1, 2, 0.5], #Bug Attacking
-    [0, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 1], #Ghost Attacking
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-
+    [1,	1, 1, 1, 1, 0.5, 1, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1],             #Normal Attacking
+    [2,	1, 0.5, 0.5, 1,	2, 0.5, 0, 2, 1, 1, 1,	1,	0.5, 2,	1, 2, 0.5],     #Fighting Attacking
+    [1,	2, 1, 1, 1, 0.5, 2,	1, 0.5, 1, 1, 2, 0.5, 1, 1,	1, 1, 1],           #Flying Attacking
+    [1, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 0, 1, 1, 2, 1, 1, 1, 1, 1, 2],         #Poison Attacking
+    [1, 1, 0, 2, 1, 2, 0.5, 1, 2, 2, 1, 0.5, 2, 1, 1, 1, 1, 1],             #Ground Attacking
+    [1, 0.5, 2, 1, 0.5, 1, 2, 1, 0.5, 2, 1, 1, 1, 1, 2, 1, 1, 1],           #Rock Attacking
+    [1, 0.5, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 0.5, 1, 2, 1, 2, 1, 1, 2, 0.5],   #Bug Attacking
+    [0, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 1],               #Ghost Attacking
+    [1, 1, 1, 1, 1, 2, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 1, 2, 1, 1, 2],         #Steel Attacking
+    [1, 1, 1, 1, 1, 0.5, 2, 1, 2, 0.5, 0.5, 2, 1, 1, 2, 0.5, 1, 1],         #Fire Attacking
+    [1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 1, 0.5, 1, 1],           #Water Attacking
+    [1, 1, 0.5, 0.5, 2, 2, 0.5, 1, 0.5, 0.5, 2, 0.5, 1, 1, 1, 0.5, 1, 1],   #Grass Attacking
+    [1, 1, 2, 1, 0, 1, 1, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 0.5, 1, 1],           #Electric Attacking
+    [1, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 0.5, 1, 1, 0, 1],             #Psychic Attacking
+    [1, 1, 2, 1, 2, 1, 1, 1, 0.5, 0.5, 0.5, 2, 1, 1, 0.5, 2, 1, 1],         #Ice Attacking
+    [1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 2, 1, 0],               #Dragon Attacking
+    [1, 0.5, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 0.5],           #Dark Attacking
+    [1, 2, 1, 0.5, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 2, 2, 1]            #Fairy Attacking
 ]
