@@ -15,15 +15,20 @@ class Pokemon:
         self.current_status = 0
         self.current_hp = 0
         self.nature = 0
+        self.renderer = None
+
+    def render(self, screen, position):
+        if self.renderer:
+            screen.blit(self.renderer, position)
 
     def computeStats(self):
         self.stats = {
-            HP:        self.computeStandardStat(),
-            ATTACK:    self.computeStandardStat(),
-            DEFENSE:   self.computeStandardStat(),
-            SPATTACK:  self.computeStandardStat(),
-            SPDEFENSE: self.computeStandardStat(),
-            SPEED:     self.computeStandardStat()
+            HP:        self.computeStandardStat(HP),
+            ATTACK:    self.computeStandardStat(ATTACK),
+            DEFENSE:   self.computeStandardStat(DEFENSE),
+            SPATTACK:  self.computeStandardStat(SPATTACK),
+            SPDEFENSE: self.computeStandardStat(SPDEFENSE),
+            SPEED:     self.computeStandardStat(SPEED)
         }
 
     def computeStandardStat(self, stat):
