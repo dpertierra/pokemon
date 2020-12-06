@@ -1,5 +1,3 @@
-from math import ceil
-
 import pygame
 from functools import partial
 from models.button import *
@@ -9,7 +7,7 @@ class Menu:
     def __init__(self):
         pygame.font.init()
         self.font = pygame.font.SysFont('Comic Sans MS', 30)
-        self.rect = pygame.Rect(0, 400, 160 * 4, 144 * 4)
+        self.rect = pygame.Rect(0, 400, 800, 600)
         self.state = 0
         self.main_buttons = [
             Button(160 * 2, 400, 150, 40, "Attack", partial(self.changeMenuState, new_state=1)),
@@ -34,20 +32,6 @@ class Menu:
                                                   partial(game.makeTurn, index=2)))
                 self.attack_buttons.append(Button(0, 450, 150, 40, attack_list[3].name.replace(' ', '\n'),
                                                   partial(game.makeTurn, index=3)))
-                # for idx, attack in enumerate(game.pokemon1.attacks):
-                    # function_turn = partial(game.makeTurn, index=idx)
-                    # if idx % 2 == 0:
-                    #     self.attack_buttons.append(
-                    #         Button(idx * 160, 400, 150, 40, attack.name, function_turn)
-                    #     )
-                    # elif idx == 3:
-                    #     self.attack_buttons.append(
-                    #         Button(320, ceil(idx/2) * 400, 150, 40, attack.name, function_turn)
-                    #     )
-                    # else:
-                    #     self.attack_buttons.append(
-                    #         Button(160, 400, 150, 40, attack.name, function_turn)
-                    #     )
             for button in self.attack_buttons:
                 button.handleEvent(event)
 

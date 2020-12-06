@@ -9,7 +9,7 @@ class GUI:
     def __init__(self):
         pygame.font.init()
         self.font = pygame.font.Font(os.path.join("res", "font", "font.ttf"), 15)
-        self.rect = pygame.Rect(0, 400, 160 * 4, 144 * 4)
+        self.rect = pygame.Rect(0, 800, 800, 600)
         self.rendererPlayer = None
         self.rendererEnemy = None
 

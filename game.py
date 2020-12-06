@@ -54,7 +54,7 @@ class Game:
         self.bg = None
         pygame.init()
 
-        self.screen = pygame.display.set_mode((160 * 4, 144 * 4))
+        self.screen = pygame.display.set_mode((800, 600))
         pygame.display.set_caption("Pokemon Battle!")
 
         clock = pygame.time.Clock()
@@ -109,7 +109,7 @@ class Game:
 
             pokemon.renderer = pokemon_img
         self.bg = pygame.image.load("res/battle_bg/battle_bg_1.png")
-        self.bg = pygame.transform.scale(self.bg, (160 * 4, 400))
+        self.bg = pygame.transform.scale(self.bg, (800, 400))
 
     def initPokemonStats(self):
         # First define pokemons with its stats
@@ -205,11 +205,11 @@ class Game:
             for button in self.buttons:
                 button.render(self)
 
-        if self.pokemon1.current_hp > 0 and self.pokemon2.current_hp == 0:
-            self.gui.renderMessage(self, self.pokemon1.name + " has won!")
-        elif self.pokemon2.current_hp > 0 and self.pokemon1.current_hp == 0:
-            self.gui.renderMessage(self, self.pokemon2.name + " has won!")
-        elif self.pokemon2.current_hp == 0 and self.pokemon1.current_hp == 0:
+        if self.pokemon1.current_hp > 0 >= self.pokemon2.current_hp:
+            self.gui.renderMessage(self, self.pokemon1.display_name + " has won!")
+        elif self.pokemon2.current_hp > 0 >= self.pokemon1.current_hp:
+            self.gui.renderMessage(self, self.pokemon2.display_name + " has won!")
+        elif self.pokemon2.current_hp <= 0 and self.pokemon1.current_hp <= 0:
             self.gui.renderMessage(self, "Incredible! Double KO!")
         else:
             self.gui.renderMessage(self, "What should " + self.pokemon1.display_name + " do?")
