@@ -52,6 +52,8 @@ class Game:
         self.menu = Menu()
         self.gui = GUI()
         self.bg = None
+        self.battle_finished = False
+        self.again = False
         pygame.init()
 
         self.screen = pygame.display.set_mode((800, 600))
@@ -195,8 +197,8 @@ class Game:
 
     def renderPokemons(self):
         pokemon_1size = self.pokemon1.renderer.get_rect().size
-        self.pokemon1.render(self.screen, (10, 460 - pokemon_1size[1]))
-        self.pokemon2.render(self.screen, (440, 0))
+        self.pokemon1.render(self.screen, (10, 470 - pokemon_1size[1]))
+        self.pokemon2.render(self.screen, (550, -20))
 
     def renderButtons(self):
         self.menu.render(self)
@@ -207,10 +209,13 @@ class Game:
 
         if self.pokemon1.current_hp > 0 >= self.pokemon2.current_hp:
             self.gui.renderMessage(self, self.pokemon1.display_name + " has won!")
+            self.battle_finished = True
         elif self.pokemon2.current_hp > 0 >= self.pokemon1.current_hp:
             self.gui.renderMessage(self, self.pokemon2.display_name + " has won!")
+            self.battle_finished = True
         elif self.pokemon2.current_hp <= 0 and self.pokemon1.current_hp <= 0:
             self.gui.renderMessage(self, "Incredible! Double KO!")
+            self.battle_finished = True
         else:
             self.gui.renderMessage(self, "What should " + self.pokemon1.display_name + " do?")
 
@@ -235,3 +240,7 @@ class Game:
                 self.battle.printCurrentStatus()
             else:
                 self.battle.printWinner()
+
+    def restart(self):
+        # self.stopped = True
+        self.again = True

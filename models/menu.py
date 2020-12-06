@@ -10,10 +10,10 @@ class Menu:
         self.rect = pygame.Rect(0, 400, 800, 600)
         self.state = 0
         self.main_buttons = [
-            Button(160 * 2, 400, 150, 40, "Attack", partial(self.changeMenuState, new_state=1)),
-            Button(160 * 2, 450, 150, 40, "Pokemon", partial(self.changeMenuState, new_state=2)),
-            Button(160 * 3, 400, 150, 40, "Bag", partial(self.changeMenuState, new_state=3)),
-            Button(160 * 3, 450, 150, 40, "Run", partial(self.changeMenuState, new_state=4))
+            Button(460, 410, 150, 40, "Attack", partial(self.changeMenuState, new_state=1)),
+            Button(460, 470, 150, 40, "Pokemon", partial(self.changeMenuState, new_state=2)),
+            Button(625, 410, 150, 40, "Bag", partial(self.changeMenuState, new_state=3)),
+            Button(625, 470, 150, 40, "Run", partial(self.changeMenuState, new_state=4))
         ]
         self.attack_buttons = []
 
@@ -24,13 +24,13 @@ class Menu:
             # Build and store attack buttons if first time
             if len(self.attack_buttons) == 0:
                 attack_list = list(game.pokemon1.attacks)
-                self.attack_buttons.append(Button(160, 400, 150, 40, attack_list[0].name.replace(' ', '\n'),
+                self.attack_buttons.append(Button(225, 410, 200, 40, attack_list[0].name,
                                                   partial(game.makeTurn, index=0)))
-                self.attack_buttons.append(Button(0, 400, 150, 40, attack_list[1].name.replace(' ', '\n'),
+                self.attack_buttons.append(Button(5, 470, 200, 40, attack_list[1].name,
                                                   partial(game.makeTurn, index=1)))
-                self.attack_buttons.append(Button(160, 450, 150, 40, attack_list[2].name.replace(' ', '\n'),
+                self.attack_buttons.append(Button(225, 470, 200, 40, attack_list[2].name,
                                                   partial(game.makeTurn, index=2)))
-                self.attack_buttons.append(Button(0, 450, 150, 40, attack_list[3].name.replace(' ', '\n'),
+                self.attack_buttons.append(Button(5, 410, 200, 40, attack_list[3].name,
                                                   partial(game.makeTurn, index=3)))
             for button in self.attack_buttons:
                 button.handleEvent(event)

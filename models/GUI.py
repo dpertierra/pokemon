@@ -38,13 +38,13 @@ class GUI:
 
     def renderMessage(self, game, text):
         text_surface = self.font.render(text, False, (0, 0, 0))
-        game.screen.blit(text_surface, (50, 500))
+        game.screen.blit(text_surface, (50, 550))
 
     def render(self, game):
         total_player_hp = game.pokemon1.stats["HP"]
         total_enemy_hp = game.pokemon2.stats["HP"]
         self.renderHPBar(game, 186, total_enemy_hp, game.pokemon2.current_hp, (112, 60))
-        self.renderHPBar(game, 180, total_player_hp, game.pokemon1.current_hp, (392, 304))
+        self.renderHPBar(game, 180, total_player_hp, game.pokemon1.current_hp, (572, 304))
 
         if self.rendererEnemy:
             text_surface = self.font.render(game.pokemon2.display_name, False, (0, 0, 0))
@@ -60,15 +60,15 @@ class GUI:
             game.screen.blit(self.rendererEnemy, (20, 50))
         if self.rendererPlayer:
             text_surface = self.font.render(game.pokemon1.display_name, False, (0, 0, 0))
-            game.screen.blit(text_surface, (330, 278))
+            game.screen.blit(text_surface, (510, 278))
 
             text_surface = self.font.render("Lv:" + str(game.pokemon1.level), False, (0, 0, 0))
-            game.screen.blit(text_surface, (530, 278))
+            game.screen.blit(text_surface, (690, 278))
 
             text_surface = self.font.render(str(int(game.pokemon1.current_hp)) + "/" + str(int(total_player_hp)), False,
                                             (0, 0, 0))
-            game.screen.blit(text_surface, (420, 330))
+            game.screen.blit(text_surface, (570, 330))
 
-            game.screen.blit(self.rendererPlayer, (300, 298))
+            game.screen.blit(self.rendererPlayer, (480, 298))
 
         self.renderMessage(game, "")
