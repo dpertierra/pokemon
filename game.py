@@ -231,7 +231,8 @@ class Game:
         print('Using attack', index)
         turn = Turn()
         turn.command1 = Command({DO_ATTACK: index})
-        turn.command2 = Command({DO_ATTACK: 0})
+        attack = randint(0, 4)
+        turn.command2 = Command({DO_ATTACK: attack})
 
         if turn.canStart():
             # Execute turn
